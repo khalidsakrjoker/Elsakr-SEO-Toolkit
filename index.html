@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elsakr SEO Toolkit | Free Online SEO Tools</title>
+    <meta name="description"
+        content="Complete SEO toolkit: Meta Tags, Open Graph, Schema.org, Robots.txt, Sitemap, URL Slug generators. Free, no signup.">
+    <meta name="keywords"
+        content="seo tools, meta tags generator, open graph, schema.org, robots.txt, sitemap generator, free seo">
+    <meta name="author" content="Elsakr">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#0a0a0f', card: '#12121a', input: '#1e1e2e' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .code-block {
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+
+        input,
+        textarea,
+        select {
+            transition: border-color 0.2s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #10b981;
+            outline: none;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-dark-bg text-white min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-screen flex flex-col">
+
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row justify-between items-center gap-4 pb-6 border-b border-slate-800">
+            <div class="flex items-center gap-4">
+                <img src="assets/logo.png" alt="Elsakr" class="w-12 h-12 object-contain">
+                <div class="text-center sm:text-left">
+                    <h1
+                        class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                        SEO Toolkit
+                    </h1>
+                    <span class="text-xs text-slate-500">7 tools in one</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span
+                    class="px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-xs font-semibold text-emerald-400">
+                    Free Tool
+                </span>
+                <a href="https://github.com/khalidsakrjoker/Elsakr-SEO-Toolkit" target="_blank"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-dark-card text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Tool Tabs -->
+        <nav class="flex flex-wrap gap-2 py-6 justify-center">
+            <button
+                class="tab-btn active px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="meta">
+                📋 <span class="hidden sm:inline">Meta Tags</span>
+            </button>
+            <button
+                class="tab-btn px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="og">
+                🔗 <span class="hidden sm:inline">Open Graph</span>
+            </button>
+            <button
+                class="tab-btn px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="schema">
+                🧩 <span class="hidden sm:inline">Schema.org</span>
+            </button>
+            <button
+                class="tab-btn px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="robots">
+                🤖 <span class="hidden sm:inline">Robots.txt</span>
+            </button>
+            <button
+                class="tab-btn px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="sitemap">
+                🗺️ <span class="hidden sm:inline">Sitemap</span>
+            </button>
+            <button
+                class="tab-btn px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="slug">
+                🔗 <span class="hidden sm:inline">URL Slug</span>
+            </button>
+            <button
+                class="tab-btn px-3 py-2 rounded-xl text-xs font-medium bg-dark-card text-slate-400 hover:bg-slate-800 flex items-center gap-1"
+                data-tool="social">
+                📱 <span class="hidden sm:inline">Social Preview</span>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+
+            <!-- Tool 1: Meta Tags -->
+            <section id="tool-meta" class="tool-section">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Page Title (50-60 chars)</label>
+                                <input type="text" id="metaTitle" maxlength="70" placeholder="Your page title..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                <span id="metaTitleCount" class="text-xs text-slate-500">0/60</span>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Meta Description (150-160
+                                    chars)</label>
+                                <textarea id="metaDesc" rows="3" maxlength="170" placeholder="Describe your page..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                                <span id="metaDescCount" class="text-xs text-slate-500">0/160</span>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Keywords (comma separated)</label>
+                                <input type="text" id="metaKeywords" placeholder="keyword1, keyword2, keyword3..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Author</label>
+                                <input type="text" id="metaAuthor" placeholder="Author name"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Canonical URL</label>
+                                <input type="url" id="metaCanonical" placeholder="https://example.com/page"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm text-slate-400">Generated HTML</label>
+                                <button id="metaCopy"
+                                    class="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg hover:bg-emerald-600">Copy</button>
+                            </div>
+                            <pre id="metaCode"
+                                class="code-block bg-dark-input rounded-lg p-4 text-xs text-emerald-400 overflow-auto max-h-80 border border-white/5"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool 2: Open Graph -->
+            <section id="tool-og" class="tool-section hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">OG Type</label>
+                                <select id="ogType"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                    <option value="website">Website</option>
+                                    <option value="article">Article</option>
+                                    <option value="product">Product</option>
+                                    <option value="video">Video</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">OG Title</label>
+                                <input type="text" id="ogTitle" placeholder="Title for social share..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">OG Description</label>
+                                <textarea id="ogDesc" rows="2" placeholder="Description for social share..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">OG URL</label>
+                                <input type="url" id="ogUrl" placeholder="https://example.com"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">OG Image URL</label>
+                                <input type="url" id="ogImage" placeholder="https://example.com/image.jpg"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Site Name</label>
+                                <input type="text" id="ogSiteName" placeholder="Your Site Name"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm text-slate-400">OG + Twitter Cards</label>
+                                <button id="ogCopy"
+                                    class="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg hover:bg-emerald-600">Copy</button>
+                            </div>
+                            <pre id="ogCode"
+                                class="code-block bg-dark-input rounded-lg p-4 text-xs text-emerald-400 overflow-auto max-h-80 border border-white/5"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool 3: Schema.org -->
+            <section id="tool-schema" class="tool-section hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Schema Type</label>
+                                <select id="schemaType"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                    <option value="Organization">Organization</option>
+                                    <option value="LocalBusiness">Local Business</option>
+                                    <option value="Article">Article</option>
+                                    <option value="Product">Product</option>
+                                    <option value="FAQPage">FAQ Page</option>
+                                    <option value="Person">Person</option>
+                                </select>
+                            </div>
+                            <div id="schemaFields"></div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm text-slate-400">JSON-LD Code</label>
+                                <button id="schemaCopy"
+                                    class="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg hover:bg-emerald-600">Copy</button>
+                            </div>
+                            <pre id="schemaCode"
+                                class="code-block bg-dark-input rounded-lg p-4 text-xs text-emerald-400 overflow-auto max-h-80 border border-white/5"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool 4: Robots.txt -->
+            <section id="tool-robots" class="tool-section hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">User-Agent</label>
+                                <select id="robotsAgent"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                    <option value="*">All Bots (*)</option>
+                                    <option value="Googlebot">Googlebot</option>
+                                    <option value="Bingbot">Bingbot</option>
+                                    <option value="Slurp">Yahoo Slurp</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Disallow Paths (one per line)</label>
+                                <textarea id="robotsDisallow" rows="4" placeholder="/admin/&#10;/private/&#10;/tmp/"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Allow Paths (one per line)</label>
+                                <textarea id="robotsAllow" rows="2" placeholder="/public/"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Sitemap URL</label>
+                                <input type="url" id="robotsSitemap" placeholder="https://example.com/sitemap.xml"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Crawl Delay (seconds)</label>
+                                <input type="number" id="robotsDelay" placeholder="10" min="0"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm text-slate-400">robots.txt</label>
+                                <button id="robotsCopy"
+                                    class="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg hover:bg-emerald-600">Copy</button>
+                            </div>
+                            <pre id="robotsCode"
+                                class="code-block bg-dark-input rounded-lg p-4 text-xs text-emerald-400 overflow-auto max-h-80 border border-white/5"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool 5: Sitemap -->
+            <section id="tool-sitemap" class="tool-section hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">URLs (one per line)</label>
+                                <textarea id="sitemapUrls" rows="8"
+                                    placeholder="https://example.com/&#10;https://example.com/about&#10;https://example.com/contact"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs text-slate-400 mb-2 block">Change Frequency</label>
+                                    <select id="sitemapFreq"
+                                        class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                        <option value="daily">Daily</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="yearly">Yearly</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-400 mb-2 block">Priority</label>
+                                    <select id="sitemapPriority"
+                                        class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                        <option value="1.0">1.0 (Highest)</option>
+                                        <option value="0.8" selected>0.8</option>
+                                        <option value="0.5">0.5</option>
+                                        <option value="0.3">0.3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm text-slate-400">sitemap.xml</label>
+                                <button id="sitemapCopy"
+                                    class="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg hover:bg-emerald-600">Copy</button>
+                            </div>
+                            <pre id="sitemapCode"
+                                class="code-block bg-dark-input rounded-lg p-4 text-xs text-emerald-400 overflow-auto max-h-80 border border-white/5"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool 6: URL Slug -->
+            <section id="tool-slug" class="tool-section hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Input Text</label>
+                                <textarea id="slugInput" rows="4" placeholder="Enter your title or text here..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs text-slate-400 mb-2 block">Separator</label>
+                                    <select id="slugSeparator"
+                                        class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                        <option value="-">Hyphen (-)</option>
+                                        <option value="_">Underscore (_)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-xs text-slate-400 mb-2 block">Max Length</label>
+                                    <input type="number" id="slugMaxLen" value="60" min="10" max="200"
+                                        class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                                </div>
+                            </div>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" id="slugLowercase" checked class="w-4 h-4 rounded">
+                                <span class="text-sm text-slate-300">Convert to lowercase</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <label class="text-sm text-slate-400">Generated Slug</label>
+                                <button id="slugCopy"
+                                    class="px-3 py-1.5 bg-emerald-500 text-white text-xs font-medium rounded-lg hover:bg-emerald-600">Copy</button>
+                            </div>
+                            <div id="slugOutput"
+                                class="bg-dark-input rounded-lg p-4 text-lg text-emerald-400 border border-white/5 break-all min-h-[60px]">
+                            </div>
+                        </div>
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <label class="text-sm text-slate-400 mb-3 block">Full URL Preview</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="slugBase" value="https://example.com/" placeholder="Base URL"
+                                    class="flex-1 px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div id="slugFullUrl" class="mt-3 text-sm text-blue-400 break-all"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool 7: Social Preview -->
+            <section id="tool-social" class="tool-section hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800 space-y-4">
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Page URL</label>
+                                <input type="url" id="socialUrl" placeholder="https://example.com/page"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Title</label>
+                                <input type="text" id="socialTitle" placeholder="Your page title"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Description</label>
+                                <textarea id="socialDesc" rows="2" placeholder="Page description..."
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm resize-none"></textarea>
+                            </div>
+                            <div>
+                                <label class="text-xs text-slate-400 mb-2 block">Image URL</label>
+                                <input type="url" id="socialImage" placeholder="https://example.com/image.jpg"
+                                    class="w-full px-4 py-3 bg-dark-input border border-white/10 rounded-lg text-white text-sm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Facebook Preview -->
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <label class="text-sm text-slate-400 mb-3 block flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Facebook Preview
+                            </label>
+                            <div id="fbPreview" class="bg-white rounded-lg overflow-hidden border border-slate-200">
+                                <div id="fbImage"
+                                    class="h-32 bg-slate-100 flex items-center justify-center text-slate-400 text-sm">No
+                                    image</div>
+                                <div class="p-3">
+                                    <p id="fbDomain" class="text-xs text-gray-500 uppercase">example.com</p>
+                                    <p id="fbTitle" class="text-sm font-semibold text-gray-900 line-clamp-2">Title</p>
+                                    <p id="fbDesc" class="text-xs text-gray-500 line-clamp-2">Description</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Twitter Preview -->
+                        <div class="bg-dark-card rounded-xl p-5 border border-slate-800">
+                            <label class="text-sm text-slate-400 mb-3 block flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                                Twitter/X Preview
+                            </label>
+                            <div id="twPreview" class="bg-black rounded-2xl overflow-hidden border border-gray-700">
+                                <div id="twImage"
+                                    class="h-32 bg-gray-800 flex items-center justify-center text-gray-500 text-sm">No
+                                    image</div>
+                                <div class="p-3">
+                                    <p id="twTitle" class="text-sm font-semibold text-white line-clamp-2">Title</p>
+                                    <p id="twDesc" class="text-xs text-gray-400 line-clamp-2">Description</p>
+                                    <p id="twDomain" class="text-xs text-gray-500 mt-1 flex items-center gap-1">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                        </svg>
+                                        example.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="pt-8 pb-4 border-t border-slate-800 text-center">
+            <p class="text-sm text-slate-500">Made with ❤️ by <a href="https://elsakr.company" target="_blank"
+                    class="text-emerald-400 hover:underline">Elsakr</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
