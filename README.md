@@ -1,57 +1,100 @@
-# 🔍 Elsakr SEO Toolkit
+# 🦅 Elsakr SEO Toolkit
 
-> 7 SEO tools in one: Meta Tags, Open Graph, Schema.org, Robots.txt, Sitemap, URL Slug, Social Preview.
+<div align="center">
+  <a href="https://elsakr.company">
+    <img src="https://elsakr.company/Sakr-logo.webp" alt="Elsakr Logo" width="200">
+  </a>
+</div>
 
-🔗 **Live Demo:** [https://khalidsakrjoker.github.io/Elsakr-SEO-Toolkit/](https://khalidsakrjoker.github.io/Elsakr-SEO-Toolkit/)
-
-## ✨ Tools Included
-
-| # | Tool | Description |
-|---|------|-------------|
-| 1 | **Meta Tags Generator** | Title, description, keywords, canonical with character counters |
-| 2 | **Open Graph Generator** | OG + Twitter Cards for social sharing |
-| 3 | **Schema.org Generator** | JSON-LD for Organization, Article, Product, FAQ, Person |
-| 4 | **Robots.txt Generator** | User-agent, disallow, allow, sitemap, crawl-delay |
-| 5 | **Sitemap Generator** | XML sitemap from URLs with frequency and priority |
-| 6 | **URL Slug Generator** | SEO-friendly URL slugs from text |
-| 7 | **Social Preview** | Facebook + Twitter preview of your links |
-
-## 📸 Screenshot
-
-![Elsakr SEO Toolkit](assets/Screenshot.png)
-
-## 🚀 Usage
-
-1. Select a tool from the tabs
-2. Fill in the fields
-3. See generated code in real-time
-4. Copy to clipboard with one click
-
-## 📁 Files
-
-- `index.html` - Main HTML with Tailwind CSS
-- `script.js` - All 7 tools logic
-- `assets/` - Logo, favicon, screenshots
-
-## 🌐 Deployment
-
-Static website - deploy to GitHub Pages:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin git@github.com:khalidsakrjoker/Elsakr-SEO-Toolkit.git
-git push -u origin main
-```
-
-Enable Pages: Settings → Pages → Source: main / root
-
-## 🔗 Links
-
-- [Elsakr Website](https://elsakr.company)
-- [All Free Tools](https://elsakr.company/tools)
+> **Part of Elsakr Open Source Tools Ecosystem — [View All Tools](https://elsakr.company/tools)**  
+> *7 SEO Tools in ONE. Get your SEO right from day 1. Rank higher.*
 
 ---
 
-Made with ❤️ by [Elsakr](https://elsakr.company)
+## ⭐ Badges
+![Stars](https://img.shields.io/github/stars/khalidsakrjoker/Elsakr-SEO-Toolkit?style=social)
+![License](https://img.shields.io/github/license/khalidsakrjoker/Elsakr-SEO-Toolkit?style=flat-square&color=blue)
+![Language](https://img.shields.io/badge/Language-HTML%2FJS-orange?style=flat-square)
+![Downloads](https://img.shields.io/github/downloads/khalidsakrjoker/Elsakr-SEO-Toolkit/total?style=flat-square&color=green)
+
+## 📋 Table of Contents
+- [🦅 Elsakr SEO Toolkit](#-elsakr-seo-toolkit)
+  - [⭐ Badges](#-badges)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🧐 What is it?](#-what-is-it)
+  - [✨ Features](#-features)
+  - [🚀 Installation \& Usage](#-installation--usage)
+  - [🤝 Contributing](#-contributing)
+  - [📜 License](#-license)
+  - [📞 Contact](#-contact)
+  - [🇪🇬 Arabic Version / النسخة العربية](#-arabic-version--النسخة-العربية)
+
+---
+
+## 🧐 What is it?
+**Elsakr SEO Toolkit** is a suite of 7 essential tools for webmasters and marketers. It helps you generate Meta Tags, Open Graph data, Twitter Cards, Schema Markup (JSON-LD), Sitemaps, and robots.txt files. Everything you need for on-page SEO in one place.
+
+## ✨ Features
+- **Meta Generator**: Title, Description, Keywords.
+- **Social Tags**: Open Graph (Facebook) & Twitter Cards.
+- **Schema JSON-LD**: Structured data for Google Rich Snippets.
+- **Sitemap/Robots**: File generators for indexing.
+- **Analysis**: Basic checklist and verification.
+
+## 🚀 Installation & Usage
+![App Screenshot](./assets/Screenshot.png)
+
+1. **Clone**:
+   ```bash
+   git clone https://github.com/khalidsakrjoker/Elsakr-SEO-Toolkit.git
+   ```
+2. **Run**: Open `index.html`.
+3. **Generate**: Fill forms and copy the HTML code to your site.
+
+---
+
+## 🤝 Contributing
+SEO changes fast. If you see a missing tag or a new Google recommendation, update it!
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📞 Contact
+**Elsakr Tools** - [elsakr.company](https://elsakr.company)  
+*Open Source Tools with a Falcon’s Vision.*
+
+---
+
+# 🇪🇬 Arabic Version / النسخة العربية
+
+# 🦅 Elsakr SEO Toolkit (حقيبة السيو)
+
+<div align="center">
+  <a href="https://elsakr.company">
+    <img src="https://elsakr.company/Sakr-logo.webp" alt="Elsakr Logo" width="200">
+  </a>
+</div>
+
+> **جزء من نظام صقر للأدوات مفتوحة المصدر — [عرض كل الأدوات](https://elsakr.company/tools)**  
+> *7 أدوات SEO في واحد. ابدأ صح واتصدر البحث.*
+
+---
+
+## 🧐 ما هي هذه الأداة؟
+مجموعة من 7 أدوات أساسية لأي مشرف موقع أو مسوق. بتساعدك تولد أكواد الميتا (Meta Tags)، بيانات السوشيال ميديا (Open Graph & Twitter)، الـ Schema Markup (JSON-LD)، خرائط الموقع (Sitemaps)، وملفات robots.txt. كل اللي محتاجه للـ On-Page SEO موجود هنا.
+
+## ✨ المميزات
+- **مولد الميتا**: العناوين، الوصف، والكلمات المفتاحية.
+- **وسوم السوشيال**: لظهور ممتاز على فيسبوك وتويتر.
+- **السكيما**: بيانات هيكلية عشان نتائج جوجل الغنية (Rich Snippets).
+- **أدوات الفهرسة**: مولد Sitemaps و Robots.txt.
+- **تحليل**: نقاط تحقق سريعة.
+
+## 🚀 التثبيت والاستخدام
+1. **نزل الملفات**: اعمل Clone للريبو.
+2. **شغل**: افتح `index.html`.
+3. **ولد**: املأ البيانات وانسخ الكود لموقعك.
+
+## 📞 تواصل معنا
+**أدوات صقر** - [elsakr.company](https://elsakr.company)  
+*أدوات مفتوحة المصدر برؤية صقر.*
